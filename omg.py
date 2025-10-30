@@ -9,7 +9,6 @@
 # The "pass" command tells Python to do nothing.  It is simply a placeholder to ensure that the starter file runs smoothly.
 # They are not needed in your completed program.  Replace them with your own code as you complete the assignment.
 
-
 # Import the necessary module(s).
 import tkinter as tk
 from tkinter import messagebox
@@ -62,7 +61,7 @@ class ProgramGUI:
             text="",
             font=("Helvetica", 16, "bold"),
             bg="#f0f0f0",
-            fg="#000080"
+            fg="#3636FD"
         )
         self.category_label.pack(pady=(10, 20))
 
@@ -151,7 +150,6 @@ class ProgramGUI:
             # Proceed to next category
             self.index += 1
             self.show_category()
-
 
 # Start the program
 gui = ProgramGUI()

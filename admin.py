@@ -1,9 +1,16 @@
 # Name: 
 # Student Number: 
 
-# Programming Principles Project – Admin Program
-# Semester 2, 2025
+# This file is provided to you as a starting point for the "admin.py" program of the Project
+# of Programming Principles in Semester 2, 2025.  It aims to give you just enough code to help ensure
+# that your program is well structured.  Please use this file as the basis of your work.
+# You are not required to reference it.
 
+# The "pass" command tells Python to do nothing.  It is simply a placeholder to ensure that the starter file runs smoothly.
+# They are not needed in your completed program.  Replace them with your own code as you complete the assignment.
+
+
+# Import the necessary module(s).
 import json
 import os
 
@@ -71,19 +78,16 @@ def load_data():
 # ==============================
 
 def main():
+    """
+    The main function that runs the program.
+    """
     data = load_data()
-    print('Welcome to the "One Must Go" Admin Program.')
+    print('Welcome to the Disass "One Must Go" Admin Program.')
 
+    
     while True:
-        # Display menu
-        print('\nChoose an action:')
-        print('[a] Add category')
-        print('[l] List categories')
-        print('[s] Search categories')
-        print('[v] View category options')
-        print('[d] Delete category')
-        print('[q] Quit program')
-        choice = input('> ').lower().strip()
+        print('\nChoose [a]dd, [l]ist, [s]earch, [v]iew, [d]elete or [q]uit.')
+        choice = input('> ').lower()
 
         # --------------------------
         # ADD category
@@ -98,8 +102,8 @@ def main():
 
             # Input 4 unique options
             options = []
-            print("Enter 4 options for this category:")
-            while len(options) < 4:
+            print("Enter 5 options for this category:")
+            while len(options) < 5:
                 option = input_something(f"Option {len(options)+1}: ")
                 if option.lower() in [o.lower() for o in options]:
                     print("That option already exists. Enter a different one.")
@@ -120,7 +124,7 @@ def main():
             else:
                 print("Current categories:")
                 for i, item in enumerate(data, 1):
-                    print(f"{i}. {item['category'].title()}")
+                    print(f"{i}. {item['category'].title()} ({len(item['options'])} options)")
 
         # --------------------------
         # SEARCH categories
@@ -138,7 +142,7 @@ def main():
             else:
                 print("Search results:")
                 for i, item in enumerate(matches, 1):
-                    print(f"{i}. {item['category'].title()}")
+                    print(f"{i}. {item['category'].title()} ({len(item['options'])} options)")
 
         # --------------------------
         # VIEW category options
@@ -181,7 +185,7 @@ def main():
         # --------------------------
         elif choice == 'q':
             save_data(data)
-            print("Goodbye! Data has been saved.")
+            print("Thank you for using Disass's One Must Go admin program!.")
             break
 
         # --------------------------
