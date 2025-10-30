@@ -1,0 +1,32 @@
+[
+    {
+        "category": "foods",
+        "options": [
+            "rice",
+            "curry",
+            "kottu",
+            "parata"
+        ],
+        "votes": [
+            0,
+            0,
+            2,
+            1
+        ]
+    },
+    {
+        "category": "country",
+        "options": [
+            "sri lanka",
+            "india",
+            "america",
+            "africa"
+        ],
+        "votes": [
+            0,
+            0,
+            1,
+            0
+        ]
+    }
+]
