@@ -86,7 +86,7 @@ def main():
 
     
     while True:
-        print('\nChoose [a]dd, [l]ist, [s]earch, [v]iew, [d]elete or [q]uit.')
+        print('\nChoose [a]add, [l]list, [s]search, [v]view, [d]delete or [q]quit.')
         choice = input('> ').lower()
 
         # --------------------------
