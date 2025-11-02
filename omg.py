@@ -1,5 +1,4 @@
-# Name: Disass Lakdiw
-# Student Number: 10697097 
+
 
 # This file is provided to you as a starting point for the "omg.py" program of the Project
 # of Programming Principles in Semester 2, 2025.  It aims to give you just enough code to help ensure
