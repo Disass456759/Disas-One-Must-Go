@@ -1,5 +1,5 @@
-# Name: 
-# Student Number: 
+# Name: Disass Lakdiw
+# Student Number: 10697097
 
 # This file is provided to you as a starting point for the "admin.py" program of the Project
 # of Programming Principles in Semester 2, 2025.  It aims to give you just enough code to help ensure
@@ -14,15 +14,10 @@
 import json
 import os
 
-# ==============================
-# Helper Functions
-# ==============================
-
 def input_something(prompt):
-    """
-    Prompt the user until a non-empty string is entered.
-    Leading/trailing spaces are removed.
-    """
+    
+    #Prompt the user until a non-empty string is entered.
+  
     while True:
         value = input(prompt).strip()
         if value:
@@ -31,10 +26,9 @@ def input_something(prompt):
 
 
 def input_int(prompt, max_value):
-    """
-    Prompt the user until a valid integer between 1 and max_value is entered.
-    Returns the integer.
-    """
+    
+    #Prompt the user until a valid integer between 1 and max_value is entered.
+    
     while True:
         user_input = input(prompt)
         if not user_input.isdigit():
@@ -47,9 +41,9 @@ def input_int(prompt, max_value):
 
 
 def save_data(data):
-    """
-    Save the data list to 'data.txt' in JSON format.
-    """
+    
+    #Save the data list to 'data.txt' in JSON format.
+    
     try:
         with open("data.txt", "w") as file:
             json.dump(data, file, indent=4)
@@ -58,10 +52,7 @@ def save_data(data):
 
 
 def load_data():
-    """
-    Load categories data from 'data.txt'.
-    If file does not exist or contains invalid data, return empty list.
-    """
+    #Load categories data from 'data.txt'.
     if os.path.exists("data.txt"):
         try:
             with open("data.txt", "r") as file:
@@ -73,14 +64,12 @@ def load_data():
     return []
 
 
-# ==============================
-# Main Program
-# ==============================
 
+# Main Program
 def main():
-    """
-    The main function that runs the program.
-    """
+    
+    #The main function that runs the program.
+
     data = load_data()
     print('Welcome to the Disass "One Must Go" Admin Program.')
 
@@ -89,9 +78,8 @@ def main():
         print('\nChoose [a]add, [l]list, [s]search, [v]view, [d]delete or [q]quit.')
         choice = input('> ').lower()
 
-        # --------------------------
+       
         # ADD category
-        # --------------------------
         if choice == 'a':
             category_name = input_something("Enter a category name: ").lower()
 
@@ -115,9 +103,8 @@ def main():
             save_data(data)
             print(f'Category "{category_name}" added successfully.')
 
-        # --------------------------
+       
         # LIST categories
-        # --------------------------
         elif choice == 'l':
             if not data:
                 print("No categories have been added yet.")
@@ -126,9 +113,8 @@ def main():
                 for i, item in enumerate(data, 1):
                     print(f"{i}. {item['category'].title()} ({len(item['options'])} options)")
 
-        # --------------------------
+       
         # SEARCH categories
-        # --------------------------
         elif choice == 's':
             if not data:
                 print("No categories available to search.")
@@ -144,9 +130,8 @@ def main():
                 for i, item in enumerate(matches, 1):
                     print(f"{i}. {item['category'].title()} ({len(item['options'])} options)")
 
-        # --------------------------
+      
         # VIEW category options
-        # --------------------------
         elif choice == 'v':
             if not data:
                 print("No categories available to view.")
@@ -163,9 +148,8 @@ def main():
             for j, opt in enumerate(selected["options"], 1):
                 print(f"{j}. {opt}")
 
-        # --------------------------
+        
         # DELETE category
-        # --------------------------
         elif choice == 'd':
             if not data:
                 print("No categories available to delete.")
@@ -180,17 +164,15 @@ def main():
             save_data(data)
             print(f'Category "{deleted["category"].title()}" deleted successfully.')
 
-        # --------------------------
+       
         # QUIT program
-        # --------------------------
         elif choice == 'q':
             save_data(data)
             print("Thank you for using Disass's One Must Go admin program!.")
             break
 
-        # --------------------------
+        
         # INVALID choice
-        # --------------------------
         else:
             print("Invalid choice. Please enter a, l, s, v, d, or q.")
 

@@ -1,5 +1,5 @@
-# Name:  
-# Student Number:  
+# Name: Disass Lakdiw
+# Student Number: 10697097 
 
 # This file is provided to you as a starting point for the "omg.py" program of the Project
 # of Programming Principles in Semester 2, 2025.  It aims to give you just enough code to help ensure
@@ -15,13 +15,13 @@ from tkinter import messagebox
 import json
 
 class ProgramGUI:
-    """
-    ProgramGUI class implements the "One Must Go" voting application.
-    It loads categories from data.txt, displays them in a GUI, and records votes.
-    """
+    
+    #ProgramGUI class implements the "One Must Go" voting application.
+    #It loads categories from data.txt, displays them in a GUI, and records votes.
+    
 
     def __init__(self):
-        """Constructor: Load data, set up GUI, and show first category."""
+        #Constructor: Load data, set up GUI, and show first category.
         # Attempt to load data from file
         try:
             with open("data.txt", "r") as file:
@@ -119,7 +119,7 @@ class ProgramGUI:
             btn.pack(pady=5)
 
     def record_vote(self, name):
-        """Record the vote for the selected option and proceed to next category."""
+        #Record the vote for the selected option and proceed to next category
         current = self.data[self.index]
 
         # Initialize votes if not present
